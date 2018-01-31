@@ -1,0 +1,92 @@
+@keyframes sidebar-tern {
+  0% {
+    width: 25px; }
+  1% {
+    width: 20px; }
+  2% {
+    width: 30px; }
+  3% {
+    width: 20px; }
+  4% {
+    width: 30px; }
+  5% {
+    width: 25px; }
+  100% {
+    width: 25px; } }
+body {
+  max-width: 100vh;
+  margin: 0;
+  padding: 0; }
+  body aside {
+    background: goldenrod;
+    right: 0;
+    position: fixed;
+    height: 100vh;
+    width: 25px;
+    border-left: 3px solid black; }
+    body aside.sidebar-tern {
+      animation: sidebar-tern 20s ease 5s infinite normal; }
+    body aside .conteiner {
+      padding: 3px;
+      display: none; }
+      body aside .conteiner .item {
+        background: rgba(56, 102, 203, 0.73);
+        border: solid 2px #3c3c3c;
+        border-radius: 3px;
+        margin-top: 3px;
+        font-size: 25px;
+        padding: 5px;
+        cursor: pointer;
+        perspective: 600px;
+        transform-style: preserve-3d;
+        transition: transform .8s ease; }
+        body aside .conteiner .item:hover {
+          transform: rotateY(360deg);
+          transition: transform .8s ease; }
+  body .rotate-animation {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    perspective: 600px;
+    transform-style: preserve-3d;
+    padding: 0;
+    margin: 0 auto; }
+    body .rotate-animation-front {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      padding: 0;
+      box-sizing: border-box;
+      background: #ea4921;
+      font-size: 25px;
+      line-height: 300px;
+      text-align: center;
+      color: #cccccc;
+      border: 5px solid #1f273f;
+      border-radius: 25px;
+      transition: transform .9s ease;
+      backface-visibility: hidden; }
+    body .rotate-animation-back {
+      background: #ea9b64;
+      font-size: 25px;
+      line-height: 300px;
+      text-align: center;
+      color: #333333;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      padding: 0;
+      box-sizing: border-box;
+      border: 5px solid #1f273f;
+      border-radius: 25px;
+      transition: transform .9s ease;
+      transform: rotateX(0deg) rotateZ(0deg) rotateY(180deg); }
+    body .rotate-animation:hover .rotate-animation-front {
+      transform: rotateX(-360deg) rotateZ(0deg) rotateY(180deg);
+      transition: transform .9s ease; }
+    body .rotate-animation:hover .rotate-animation-back {
+      transform: rotateX(-360deg) rotateZ(0deg) rotateY(360deg);
+      transition: transform .9s ease; }
+
+/*# sourceMappingURL=s.css.map */
