@@ -28,7 +28,8 @@ body {
       animation: sidebar-tern 20s ease 5s infinite normal; }
     body aside .conteiner {
       padding: 3px;
-      display: none; }
+      display: none;
+      perspective: 800px; }
       body aside .conteiner .item {
         background: rgba(56, 102, 203, 0.73);
         border: solid 2px #3c3c3c;
@@ -37,11 +38,10 @@ body {
         font-size: 25px;
         padding: 5px;
         cursor: pointer;
-        perspective: 600px;
         transform-style: preserve-3d;
         transition: transform .8s ease; }
         body aside .conteiner .item:hover {
-          transform: rotateY(360deg);
+          transform: rotateX(360deg);
           transition: transform .8s ease; }
   body .rotate-animation {
     position: relative;

@@ -1,0 +1,105 @@
+@keyframes carusel-l {
+  0% {
+    transform: scale(0.95, 0.95) rotateY(0);
+    z-index: 1;
+    left: 35px;
+  }
+  25% {
+    transform: scale(0.96, 0.96) rotateY(5deg);
+    z-index: 1;
+    left: 15px;
+  }
+  50% {
+    transform: scale(0.975, 0.975) rotateY(0);
+    z-index: 2;
+    left: 0px;
+  }
+  75% {
+    transform: scale(0.99, 0.99) rotateY(-5deg);
+    z-index: 2;
+    left: 15px;
+  }
+  100% {
+    transform: scale(1, 1) rotateY(0);
+    z-index: 2;
+    left: 35px;
+  }
+}
+@keyframes carusel-r {
+  0% {
+    transform: scale(0.95, 0.95) rotateY(0);
+    z-index: 1;
+    right: 35px;
+  }
+  25% {
+    transform: scale(0.96, 0.96) rotateY(5deg);
+    z-index: 1;
+    right: 15px;
+  }
+  50% {
+    transform: scale(0.975, 0.975) rotateY(0);
+    z-index: 2;
+    right: 0px;
+  }
+  75% {
+    transform: scale(0.99, 0.99) rotateY(-5deg);
+    z-index: 2;
+    right: 15px;
+  }
+  100% {
+    transform: scale(1, 1) rotateY(0);
+    z-index: 2;
+    right: 35px;
+  }
+}
+
+section {
+  #carusel {
+    transform-style: preserve-3d;
+    perspective: 600px;
+    .back {
+      position: relative;
+      width: 368px;
+      height: 650px;
+      display: inline-block;
+      box-shadow:         -10px 3px 3px 0px rgba(50, 50, 50, 0.5);
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      &-1 {
+        transition: all 1s ease;
+        &.active {
+          animation: carusel-l 0.45s ease-in-out normal;
+          animation-fill-mode: forwards;
+        }
+        &.passive {
+          transform: scale(0.95, 0.95) rotateY(0);
+          z-index: 1;
+          left: 35px;
+          transition: all 1s ease;
+        }
+      }
+      &-2 {
+        transition: all 1s ease;
+        //animation-duration: 0.45s;
+        //animation-timing-function: ease-in-out;
+        //animation-direction: normal;
+        //animation-fill-mode: forwards;
+        &.active {
+          animation: carusel-r 0.45s ease-in-out normal;
+          animation-fill-mode: forwards;
+        }
+        &.passive {
+          transform: scale(0.95, 0.95) rotateY(0);
+          z-index: 1;
+          right: 35px;
+          transition: all 1s ease;
+        }
+      }
+    }
+    &:hover > .back1 {
+      animation: carusel 1s ease 0 normal;
+    }
+  }
+}
