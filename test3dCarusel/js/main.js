@@ -8,6 +8,7 @@
             w3 = width*0.98,
             w4 = width*0.99,
             h1 = height*0.95;
+
         $(this)
             .removeClass('passive')
             .addClass('active')
