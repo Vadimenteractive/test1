@@ -66,6 +66,26 @@ body {
         color: #98d361;
         text-transform: uppercase;
         font: normal 2rem "ProximaNova-RegularIt", sans-serif; }
+      body header .head .contain_block .content_block .button1 {
+        display: inline-block;
+        text-decoration: none;
+        border-radius: 30px;
+        width: 230px;
+        height: 60px;
+        text-transform: uppercase;
+        font: normal 1.3rem "ProximaNova-RegularIt", sans-serif;
+        line-height: 60px;
+        box-sizing: border-box;
+        text-align: center;
+        border: solid 2px #b9b9b9;
+        background-color: #b9b9b9;
+        color: white;
+        transition: all 0.4s ease; }
+        body header .head .contain_block .content_block .button1:hover {
+          border-color: #98d361;
+          background-color: white;
+          color: #98d361;
+          transition: all 0.4s ease; }
     body header .head .phone {
       margin: auto;
       background: url("../img/phone.jpg");
