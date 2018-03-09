@@ -170,7 +170,7 @@ body {
         position: absolute;
         width: 100vw;
         top: 0;
-        z-index: 5;
+        z-index: 16;
       }
       background: #98d361;
       .navbar-nav {
@@ -183,11 +183,15 @@ body {
             border: solid 1px;
             a {
               padding: 0;
-              color: white;
               text-transform: uppercase;
             }
-
           }
+        }
+      }
+      .nav-item {
+        font:bold 1.2rem 'ProximaNova-RegularIt', sans-serif;
+        a {
+          color: white !important;
         }
       }
     }
@@ -285,7 +289,6 @@ body {
                 margin-right: 25px;
               }
             }
-
           }
         }
         .link_block {
@@ -399,7 +402,9 @@ body {
 
   #features {
     padding: 70px 35px;
+    background: #f8f8f9;
     #carusel {
+      margin: 0 auto;
       width: 570px;
       transform-style: preserve-3d;
       perspective: 600px;
@@ -444,18 +449,23 @@ body {
       }
     }
     .content-block {
-
       h2 {
         font:bold 2.2rem 'ProximaNova-RegularIt', sans-serif;
         margin-bottom: 35px;
+        text-align: center;
+        @media all and (min-width: 1200px) {
+          text-align: left;
+        }
       }
       .content-item {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         margin-bottom: 65px;
-        &:last-child {
-          margin-bottom: 0;
+        @media all and (min-width: 1200px){
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
         svg {
           width: 44px;
@@ -502,9 +512,119 @@ body {
             margin: 0;
           }
         }
-
       }
-
     }
+  }
+
+  #authors {
+    margin: 70px 35px;
+    h4 {
+      text-align: center;
+      color: #98d361;
+      font:bold 6rem 'ProximaNova-RegularIt', sans-serif;
+    }
+    p {
+      max-width: 660px;
+      margin: 0 auto 35px;
+      text-align: center;
+      font:normal 1.5rem 'ProximaNova-RegularIt', sans-serif;
+    }
+    .p-0 {
+      display: flex;
+      justify-content: center;
+      .content-item {
+        display: inline-block;
+        width: 250px;
+      }
+    }
+    .face {
+      display: inline-block;
+      vertical-align: text-bottom;
+      margin-right: 15px;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: solid 6px white;
+      position: relative;
+      &:before {
+        position: absolute;
+        content: '';
+        left: -6px;
+        top: -6px;
+        width: 84px;
+        height: 84px;
+        border: solid 2px #98d361;
+        border-radius: 50%;
+      }
+      @media all and (max-width: 991px){
+        display: block;
+        margin: 0 auto 15px;
+      }
+      @media all and (max-width: 767px){
+        display: inline-block;
+        margin: 0 15px 0 0;
+      }
+    }
+    .content {
+      display: inline-block;
+      height: 84px;
+      h6 {
+        font:normal 1.2rem 'ProximaNova-RegularIt', sans-serif;
+        color: #98d361;
+      }
+      p {
+        font:normal 1.1rem 'ProximaNova-RegularIt', sans-serif;
+        text-align: left;
+      }
+      @media all and (max-width: 991px){
+        display: block;
+        h6, p {
+          text-align: center;
+        }
+      }
+      @media all and (max-width: 767px){
+        display: inline-block;
+        h6, p {
+          text-align: left;
+        }
+      }
+    }
+    .carousel-indicators {
+      bottom: -20px;
+      li {
+        background: #8c9494;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: 0 5px;
+        &.active {
+          background: #98d361
+        }
+      }
+    }
+  }
+
+  #notified {
+    padding: 70px 35px;
+    background: #f8f8f9;
+    svg {
+      fill: #98d361;
+      display: block;
+      width: 58px;
+      height: 43px;
+      margin:0 auto 35px;
+    }
+    h3 {
+      color: #8c9494;
+      font:normal 1.9rem 'ProximaNova-RegularIt', sans-serif;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    p {
+      font:300 1.4rem 'ProximaNova-RegularIt', sans-serif;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
   }
 }
