@@ -310,36 +310,85 @@ body {
         margin-bottom: 35px; }
         body #landing .item_col:last-child {
           margin-bottom: 0; } }
-  body #features #carusel {
-    transform-style: preserve-3d;
-    perspective: 600px;
-    font-size: 0; }
-    body #features #carusel .back {
-      position: relative;
-      width: 285px;
-      height: 504px;
-      display: inline-block;
-      box-shadow: -10px 3px 3px 0px rgba(50, 50, 50, 0.5); }
-      body #features #carusel .back img {
-        width: 100%;
-        height: 100%; }
-      body #features #carusel .back-1 {
-        transition: all 1s ease; }
-        body #features #carusel .back-1.active {
-          animation: carusel-l 0.45s ease-in-out normal;
-          animation-fill-mode: forwards; }
-        body #features #carusel .back-1.passive {
-          animation: carusel-lr 0.45s ease-in-out normal;
-          animation-fill-mode: forwards; }
-      body #features #carusel .back-2 {
-        transition: all 1s ease; }
-        body #features #carusel .back-2.active {
-          animation: carusel-r 0.45s ease-in-out normal;
-          animation-fill-mode: forwards; }
-        body #features #carusel .back-2.passive {
-          animation: carusel-rr 0.45s ease-in-out normal;
-          animation-fill-mode: forwards; }
-    body #features #carusel:hover > .back1 {
-      animation: carusel 1s ease 0 normal; }
+  body #features {
+    padding: 70px 35px; }
+    body #features #carusel {
+      width: 570px;
+      transform-style: preserve-3d;
+      perspective: 600px;
+      font-size: 0; }
+      body #features #carusel .back {
+        cursor: pointer;
+        top: 0;
+        position: relative;
+        width: 285px;
+        height: 504px;
+        display: inline-block;
+        box-shadow: -10px 3px 3px 0px rgba(50, 50, 50, 0.5); }
+        body #features #carusel .back img {
+          width: 100%;
+          height: 100%; }
+        body #features #carusel .back-1 {
+          transition: all 1s ease; }
+          body #features #carusel .back-1.active {
+            animation: carusel-l 0.45s ease-in-out normal;
+            animation-fill-mode: forwards; }
+          body #features #carusel .back-1.passive {
+            animation: carusel-lr 0.45s ease-in-out normal;
+            animation-fill-mode: forwards; }
+        body #features #carusel .back-2 {
+          transition: all 1s ease; }
+          body #features #carusel .back-2.active {
+            animation: carusel-r 0.45s ease-in-out normal;
+            animation-fill-mode: forwards; }
+          body #features #carusel .back-2.passive {
+            animation: carusel-rr 0.45s ease-in-out normal;
+            animation-fill-mode: forwards; }
+      body #features #carusel:hover > .back1 {
+        animation: carusel 1s ease 0 normal; }
+    body #features .content-block h2 {
+      font: bold 2.2rem 'ProximaNova-RegularIt', sans-serif;
+      margin-bottom: 35px; }
+    body #features .content-block .content-item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 65px; }
+      body #features .content-block .content-item:last-child {
+        margin-bottom: 0; }
+      body #features .content-block .content-item svg {
+        width: 44px;
+        height: 40px;
+        margin-right: 35px; }
+      body #features .content-block .content-item .content a {
+        color: #98d361;
+        font: bold 1.2rem 'ProximaNova-RegularIt', sans-serif;
+        text-decoration: none;
+        position: relative; }
+        body #features .content-block .content-item .content a:before {
+          position: absolute;
+          display: inline-block;
+          content: '[';
+          left: -40px;
+          opacity: 0;
+          transition: all 0.3s ease; }
+        body #features .content-block .content-item .content a:after {
+          position: absolute;
+          display: inline-block;
+          content: ']';
+          right: -40px;
+          opacity: 0;
+          transition: all 0.3s ease; }
+        body #features .content-block .content-item .content a:hover:before {
+          left: -10px;
+          opacity: 1;
+          transition: all 0.6s ease; }
+        body #features .content-block .content-item .content a:hover:after {
+          right: -10px;
+          opacity: 1;
+          transition: all 0.6s ease; }
+      body #features .content-block .content-item .content p {
+        font: normal 1.1rem 'ProximaNova-RegularIt', sans-serif;
+        margin: 0; }
 
 /*# sourceMappingURL=main.css.map */
