@@ -41,7 +41,115 @@
   font-weight: 300;
   font-style: normal;
 }
+@keyframes carusel-l {
+  0% {
+    transform: scale(0.92, 0.92) rotateY(0);
+    z-index: 1;
+    left: 40px;
+  }
+  25% {
+    transform: scale(0.94, 0.94) rotateY(5deg);
+    z-index: 1;
+    left: 20px;
+  }
+  50% {
+    transform: scale(0.96, 0.96) rotateY(0);
+    z-index: 2;
+    left: 0px;
+  }
+  75% {
+    transform: scale(0.98, 0.98) rotateY(-5deg);
+    z-index: 2;
+    left: 20px;
+  }
+  100% {
+    transform: scale(1, 1) rotateY(0);
+    z-index: 2;
+    left: 40px;
+  }
+}
+@keyframes carusel-lr {
+  100% {
+    transform: scale(0.92, 0.92) rotateY(0);
+    z-index: 1;
+    left: 40px;
+  }
+  75% {
+    transform: scale(0.94, 0.94) rotateY(5deg);
+    z-index: 1;
+    left: 20px;
+  }
+  50% {
+    transform: scale(0.96, 0.96) rotateY(0);
+    z-index: 2;
+    left: 0px;
+  }
+  25% {
+    transform: scale(0.98, 0.98) rotateY(-5deg);
+    z-index: 2;
+    left: 20px;
+  }
+  0% {
+    transform: scale(1, 1) rotateY(0);
+    z-index: 2;
+    left: 40px;
+  }
+}
+@keyframes carusel-r {
+  0% {
+    transform: scale(0.92, 0.92) rotateY(0);
+    z-index: 1;
+    right: 40px;
+  }
+  25% {
+    transform: scale(0.94, 0.94) rotateY(-5deg);
+    z-index: 1;
+    right: 20px;
+  }
+  50% {
+    transform: scale(0.96, 0.96) rotateY(0);
+    z-index: 2;
+    right: 0px;
+  }
+  75% {
+    transform: scale(0.98, 0.98) rotateY(5deg);
+    z-index: 2;
+    right: 20px;
+  }
+  100% {
+    transform: scale(1, 1) rotateY(0);
+    z-index: 2;
+    right: 40px;
+  }
+}
+@keyframes carusel-rr {
+  0% {
+    transform: scale(1, 1) rotateY(0);
+    z-index: 2;
+    right: 40px;
+  }
+  25% {
+    transform: scale(0.98, 0.98) rotateY(5deg);
+    z-index: 2;
+    right: 20px;
+  }
 
+  50% {
+    transform: scale(0.96, 0.96) rotateY(0);
+    z-index: 2;
+    right: 0px;
+  }
+  75% {
+    transform: scale(0.94, 0.94) rotateY(-5deg);
+    z-index: 1;
+    right: 20px;
+  }
+  100% {
+    transform: scale(0.92, 0.92) rotateY(0);
+    z-index: 1;
+    right: 40px;
+  }
+}
 @mixin center767() {
   @media all and (max-width: 991px) {
     display: block;
@@ -186,10 +294,10 @@ body {
             display: inline-block;
             text-decoration: none;
             margin-right: 43px;
-
             svg {
               width: 31px;
               height: 32px;
+              fill: #98d361;
             }
             &:last-child {
               margin-right: 0;
@@ -231,6 +339,108 @@ body {
           }
         }
       }
+    }
+  }
+  #landing {
+    background: #98d361;
+    padding: 70px 15px;
+    .head_block {
+      margin-bottom: 35px;
+    }
+    h2 {
+      font: normal 2.1rem 'ProximaNova-RegularIt', sans-serif;
+      color: white;
+      text-align: center;
+      margin-bottom: 35px;
+    }
+    .p_block {
+      display: flex;
+    }
+    p {
+      font: normal 1.3rem 'ProximaNova-RegularIt', sans-serif;
+      color: white;
+      text-align: center;
+      margin: auto;
+    }
+    h3 {
+      font: normal 1.7rem 'ProximaNova-RegularIt', sans-serif;
+      color: white;
+      text-align: center;
+      margin-bottom: 35px;
+      @media all and (max-width: 575px) {
+        margin-bottom: 15px;
+      }
+    }
+    a {
+      display: block;
+      text-align: center;
+      margin-bottom: 35px;
+      @media all and (max-width: 767px) {
+        margin-bottom: 0;
+      }
+      @media all and (max-width: 575px) {
+        margin-bottom: 15px;
+      }
+      svg {
+        width: 89px;
+        height: 70px;
+        fill: white;
+      }
+    }
+    .item_col {
+      @media all and (max-width: 767px) {
+        margin-bottom: 35px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  #features {
+    #carusel {
+      transform-style: preserve-3d;
+      perspective: 600px;
+      font-size: 0;
+      .back {
+        position: relative;
+        width: 285px;
+        height: 504px;
+        display: inline-block;
+        box-shadow:         -10px 3px 3px 0px rgba(50, 50, 50, 0.5);
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        &-1 {
+          transition: all 1s ease;
+          &.active {
+            animation: carusel-l 0.45s ease-in-out normal;
+            animation-fill-mode: forwards;
+          }
+          &.passive {
+            animation: carusel-lr 0.45s ease-in-out normal;
+            animation-fill-mode: forwards;
+          }
+        }
+        &-2 {
+          transition: all 1s ease;
+          &.active {
+            animation: carusel-r 0.45s ease-in-out normal;
+            animation-fill-mode: forwards;
+          }
+          &.passive {
+            animation: carusel-rr 0.45s ease-in-out normal;
+            animation-fill-mode: forwards;
+          }
+        }
+      }
+      &:hover > .back1 {
+        animation: carusel 1s ease 0 normal;
+      }
+    }
+    .content-block {
+
     }
   }
 }
