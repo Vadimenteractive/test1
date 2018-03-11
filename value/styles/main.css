@@ -322,6 +322,12 @@ body {
       transform-style: preserve-3d;
       perspective: 600px;
       font-size: 0; }
+      @media all and (max-width: 640px) {
+        body #features #carusel {
+          width: calc(100vw - 70px) !important; }
+          body #features #carusel .back {
+            width: calc(50vw - 35px) !important;
+            height: calc((50vw - 35px) * 1.77) !important; } }
       body #features #carusel .back {
         cursor: pointer;
         top: 0;
@@ -570,5 +576,33 @@ body {
             body #notified form #notifi_submit.active {
               margin-right: 0 !important;
               transition: all 0.5s ease; } }
+  body footer {
+    padding: 70px 35px; }
+    body footer .link-block {
+      max-width: 360px;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto 60px; }
+    body footer .feedback {
+      display: flex;
+      justify-content: space-between;
+      font: 300 1rem 'ProximaNova-RegularIt', sans-serif;
+      color: #a9afaf;
+      max-width: 470px;
+      margin: 0 auto;
+      flex-wrap: wrap; }
+      @media all and (max-width: 540px) {
+        body footer .feedback p {
+          width: 100%;
+          text-align: center; }
+        body footer .feedback .line1 {
+          display: none !important; } }
+      body footer .feedback .line {
+        display: inline-block;
+        background: #a9afaf;
+        width: 2px;
+        height: 16px; }
+      body footer .feedback a {
+        color: #a9afaf; }
 
 /*# sourceMappingURL=main.css.map */
