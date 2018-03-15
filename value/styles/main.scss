@@ -165,7 +165,20 @@
     transform: rotate(90deg);
   }
 }
-
+@keyframes like {
+  0% {
+    transform: rotate(0) translateX(-50%) translateY(-50%);
+    transform-origin: -200% 0%;
+  }
+  50% {
+    transform: rotate(-10deg) translateX(-50%) translateY(-50%);
+    transform-origin: -200% 0%;
+  }
+  100% {
+    transform: rotate(0) translateX(-50%) translateY(-50%);
+    transform-origin: -200% 0%;
+  }
+}
 @mixin center767() {
   @media all and (max-width: 991px) {
     display: block;
@@ -206,8 +219,38 @@ body {
       }
       .nav-item {
         font: bold 1.2rem 'ProximaNova-RegularIt', sans-serif;
+        position: relative;
         a {
           color: white !important;
+        }
+        &:before, &:after {
+          position: absolute;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: white;
+          opacity: 0;
+          transition: all 0.5s ease;
+        }
+        &:before {
+          top: 0;
+          left: 100%;
+        }
+        &:after {
+          bottom: 0;
+          right: 100%;
+        }
+        &:hover {
+          &:before {
+            left: 0;
+            opacity: 1;
+            transition: all 0.5s ease;
+          }
+          &:after {
+            right: 0;
+            opacity: 1;
+            transition: all 0.5s ease;
+          }
         }
       }
     }
@@ -230,8 +273,8 @@ body {
             height: 140px;
             @include center767;
             &:hover > img {
-              box-shadow: -6px 8px 10px 0px rgba(50, 50, 50, 0.75);
-              transform: translateX(5px) translateY(-5px);
+              box-shadow: 2px 8px 15px 0px rgba(50, 50, 50, 0.75);
+              transform: translateX(-2px) translateY(-5px);
               transition: all 0.4s ease;
             }
             img {
@@ -345,7 +388,7 @@ body {
               z-index: 1;
               background: transparent;
               border-radius: 50%;
-              border: solid 2px #98d361;
+              border: solid 3px #98d361;
               width: 74px;
               height: 74px;
               left: 50%;
@@ -455,6 +498,8 @@ body {
       display: block;
       text-align: center;
       margin-bottom: 35px;
+      position: relative;
+      height: 70px;
       @media all and (max-width: 767px) {
         margin-bottom: 0;
       }
@@ -465,6 +510,48 @@ body {
         width: 89px;
         height: 70px;
         fill: white;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        position: absolute;
+        &.back {
+          transform: translateX(-50%) translateY(-50%) scale(0);
+          transition: transform 0.4s ease;
+        }
+        &.front {
+          transition: left 0.6s ease-in, opacity 0.5s ease;
+        }
+        &.back1 {
+          left: 20%;
+          opacity: 0;
+          transition: left 0.4s ease-in, opacity 0.5s ease;
+        }
+        &.front1 {
+          transition: transform 0.5s ease;
+        }
+      }
+      &:hover > svg{
+        &.back {
+          transform: translateX(-50%) translateY(-50%) scale(1);
+          transition: transform 0.6s ease;
+        }
+        &.front {
+          left: 100%;
+          opacity: 0;
+          transition: left 0.4s ease-in, opacity 0.5s ease;
+        }
+        &.back1 {
+          left: 50%;
+          opacity: 1;
+          transition: left 0.6s ease-out, opacity 0.5s ease;
+        }
+        &.front1 {
+          transform: translateX(20%) translateY(-18%) scale(0.4);
+          transition: transform 0.5s ease;
+        }
+        &.front3 {
+          animation: like 1s infinite ease-in-out normal;
+        }
       }
     }
     .item_col {
@@ -813,6 +900,18 @@ body {
       display: flex;
       justify-content: space-between;
       margin: 0 auto 60px;
+      a {
+        img {
+          position: relative;
+          transition: all 0.5s ease;
+          top: 0;
+        }
+        &:hover > img{
+          top: -10px;
+          transition: all 0.5s ease;
+        }
+      }
+
     }
     .feedback {
       display: flex;
@@ -839,6 +938,24 @@ body {
       }
       a {
         color: #a9afaf;
+        text-decoration: none;
+        position: relative;
+        &:before {
+          position: absolute;
+          display: block;
+          content: '';
+          background: #a9afaf;
+          width: 100%;
+          height: 1px;
+          bottom: 0;
+          opacity: 0;
+          transition: bottom 0.4s ease-out, opacity 0.5s ease;
+        }
+        &:hover:before {
+          bottom: 15px;
+          opacity: 1;
+          transition: bottom 0.5s ease-out, opacity 0.4s ease;
+        }
       }
     }
   }

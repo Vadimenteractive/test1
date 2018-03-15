@@ -113,6 +113,16 @@
     transform: rotate(45deg); }
   100% {
     transform: rotate(90deg); } }
+@keyframes like {
+  0% {
+    transform: rotate(0) translateX(-50%) translateY(-50%);
+    transform-origin: -200% 0%; }
+  50% {
+    transform: rotate(-10deg) translateX(-50%) translateY(-50%);
+    transform-origin: -200% 0%; }
+  100% {
+    transform: rotate(0) translateX(-50%) translateY(-50%);
+    transform-origin: -200% 0%; } }
 body {
   margin: 0;
   padding: 0; }
@@ -137,9 +147,32 @@ body {
           padding: 0;
           text-transform: uppercase; } }
     body header .navbar .nav-item {
-      font: bold 1.2rem 'ProximaNova-RegularIt', sans-serif; }
+      font: bold 1.2rem 'ProximaNova-RegularIt', sans-serif;
+      position: relative; }
       body header .navbar .nav-item a {
         color: white !important; }
+      body header .navbar .nav-item:before, body header .navbar .nav-item:after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: white;
+        opacity: 0;
+        transition: all 0.5s ease; }
+      body header .navbar .nav-item:before {
+        top: 0;
+        left: 100%; }
+      body header .navbar .nav-item:after {
+        bottom: 0;
+        right: 100%; }
+      body header .navbar .nav-item:hover:before {
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease; }
+      body header .navbar .nav-item:hover:after {
+        right: 0;
+        opacity: 1;
+        transition: all 0.5s ease; }
   body header .head {
     min-height: calc(100vh - 56px); }
     body header .head .container {
@@ -160,8 +193,8 @@ body {
             margin: 0 auto;
             text-align: center; } }
         body header .head .contain_block .logo_block .logo:hover > img {
-          box-shadow: -6px 8px 10px 0px rgba(50, 50, 50, 0.75);
-          transform: translateX(5px) translateY(-5px);
+          box-shadow: 2px 8px 15px 0px rgba(50, 50, 50, 0.75);
+          transform: translateX(-2px) translateY(-5px);
           transition: all 0.4s ease; }
         body header .head .contain_block .logo_block .logo img {
           border-radius: 32px;
@@ -269,7 +302,7 @@ body {
         z-index: 1;
         background: transparent;
         border-radius: 50%;
-        border: solid 2px #98d361;
+        border: solid 3px #98d361;
         width: 74px;
         height: 74px;
         left: 50%;
@@ -354,7 +387,9 @@ body {
     body #landing a {
       display: block;
       text-align: center;
-      margin-bottom: 35px; }
+      margin-bottom: 35px;
+      position: relative;
+      height: 70px; }
       @media all and (max-width: 767px) {
         body #landing a {
           margin-bottom: 0; } }
@@ -364,7 +399,38 @@ body {
       body #landing a svg {
         width: 89px;
         height: 70px;
-        fill: white; }
+        fill: white;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        position: absolute; }
+        body #landing a svg.back {
+          transform: translateX(-50%) translateY(-50%) scale(0);
+          transition: transform 0.4s ease; }
+        body #landing a svg.front {
+          transition: left 0.6s ease-in, opacity 0.5s ease; }
+        body #landing a svg.back1 {
+          left: 20%;
+          opacity: 0;
+          transition: left 0.4s ease-in, opacity 0.5s ease; }
+        body #landing a svg.front1 {
+          transition: transform 0.5s ease; }
+      body #landing a:hover > svg.back {
+        transform: translateX(-50%) translateY(-50%) scale(1);
+        transition: transform 0.6s ease; }
+      body #landing a:hover > svg.front {
+        left: 100%;
+        opacity: 0;
+        transition: left 0.4s ease-in, opacity 0.5s ease; }
+      body #landing a:hover > svg.back1 {
+        left: 50%;
+        opacity: 1;
+        transition: left 0.6s ease-out, opacity 0.5s ease; }
+      body #landing a:hover > svg.front1 {
+        transform: translateX(20%) translateY(-18%) scale(0.4);
+        transition: transform 0.5s ease; }
+      body #landing a:hover > svg.front3 {
+        animation: like 1s infinite ease-in-out normal; }
     @media all and (max-width: 767px) {
       body #landing .item_col {
         margin-bottom: 35px; }
@@ -640,6 +706,13 @@ body {
       display: flex;
       justify-content: space-between;
       margin: 0 auto 60px; }
+      body footer .link-block a img {
+        position: relative;
+        transition: all 0.5s ease;
+        top: 0; }
+      body footer .link-block a:hover > img {
+        top: -10px;
+        transition: all 0.5s ease; }
     body footer .feedback {
       display: flex;
       justify-content: space-between;
@@ -660,6 +733,22 @@ body {
         width: 2px;
         height: 16px; }
       body footer .feedback a {
-        color: #a9afaf; }
+        color: #a9afaf;
+        text-decoration: none;
+        position: relative; }
+        body footer .feedback a:before {
+          position: absolute;
+          display: block;
+          content: '';
+          background: #a9afaf;
+          width: 100%;
+          height: 1px;
+          bottom: 0;
+          opacity: 0;
+          transition: bottom 0.4s ease-out, opacity 0.5s ease; }
+        body footer .feedback a:hover:before {
+          bottom: 15px;
+          opacity: 1;
+          transition: bottom 0.5s ease-out, opacity 0.4s ease; }
 
 /*# sourceMappingURL=main.css.map */
