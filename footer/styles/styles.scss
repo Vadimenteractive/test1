@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+body {
+  margin: 0;
+  padding: 0;
+  footer {
+    background: #4f4f4f;
+    max-width: 1366px;
+    width: 100vw;
+    height: 200px;
+    padding: 28px 18px 17px;
+    a, p, span {
+      color: #F2F2F2;
+    }
+    .footer_top {
+      .footer_links {
+        display: inline-block;
+        padding: 12px 0 16px;
+        a {
+          font: 400 18px 'Lato', sans-serif;
+          line-height: 22px;
+          text-decoration: none;
+          &:first-child {
+            margin-right: 10px;
+          }
+        }
+      }
+      .footer_social {
+        display: inline-block;
+        a {
+          span {
+            display: inline-flex;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #828282;
+            svg {
+              margin: auto;
+              fill: #F2F2F2;
+              &.facebook {
+                width: 18px;
+                height: 35px;
+              }
+              &.instagramm {
+                width: 32px;
+                height: 32px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
