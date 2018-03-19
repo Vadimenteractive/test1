@@ -359,8 +359,10 @@ body {
           justify-content: center;
           .footer_contacts {
             margin-bottom: 11px;
-            p {
-              text-align: center;
+            .phones {
+              p {
+                text-align: center;
+              }
             }
           }
           .footer_address {
