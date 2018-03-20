@@ -37,7 +37,8 @@ body {
     padding: 28px 18px 17px; }
     body footer .footer {
       max-width: 1366px;
-      width: calc(100vw - 36px); }
+      width: calc(100vw - 36px);
+      margin: 0 auto; }
       body footer .footer a, body footer .footer p, body footer .footer span {
         color: #F2F2F2; }
       body footer .footer a {
