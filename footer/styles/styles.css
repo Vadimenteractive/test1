@@ -213,13 +213,12 @@ body {
               background: #F2F2F2;
               width: 100%;
               height: 1px;
-              bottom: -2px;
+              bottom: -10px;
               left: 0;
-              margin-bottom: -8px;
               opacity: 0;
               transition: all 0.4s ease; }
             body footer .footer .footer_bot .footer_contacts a:hover:before {
-              margin-bottom: 0;
+              bottom: -2px;
               opacity: 1;
               transition: all 0.3s ease; }
           body footer .footer .footer_bot .footer_contacts .phones {
@@ -258,13 +257,12 @@ body {
               background: #F2F2F2;
               width: 100%;
               height: 1px;
-              bottom: -2px;
+              bottom: -10px;
               left: 0;
-              margin-bottom: -8px;
               opacity: 0;
               transition: all 0.4s ease; }
             body footer .footer .footer_bot .footer_made-by a:hover:before {
-              margin-bottom: 0;
+              bottom: -2px;
               opacity: 1;
               transition: all 0.3s ease; }
           body footer .footer .footer_bot .footer_made-by svg {
